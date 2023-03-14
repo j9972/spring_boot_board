@@ -60,7 +60,7 @@ public class BoardController {
             list = boardService.boardSearchList(searchKeyword, pageable);
         }
 
-        int nowPage = list.getPageable().getPageNumber() + 1;
+        int nowPage = list.getPageable().getPageNumber() + 1; // pageable은 0부터 시작하므로 +1 필수
         int startPage = Math.max(nowPage - 4, 1);
         int endPage = Math.min(nowPage + 5, list.getTotalPages());
 
